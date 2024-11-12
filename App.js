@@ -22,7 +22,7 @@ export default function App() {
         params: {
           DEEPL_API_KEY, // Usamos la clave de API desde el archivo .env
           text: text,
-          target_lang: 'ES', // Traducción al español
+          target_lang: 'EN', // Traducción al español
         },
       });
 
