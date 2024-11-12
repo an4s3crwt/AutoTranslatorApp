@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import * as Clipboard from 'expo-clipboard';
 import axios from 'axios';
+import { DEEPL_API_KEY } from 'react-native-dotenv';
+
 
 export default function App() {
   const [translation, setTranslation] = useState(''); // Para guardar el texto traducido
@@ -18,7 +20,7 @@ export default function App() {
     try {
       const response = await axios.get('https://api-free.deepl.com/v2/translate', {
         params: {
-          auth_key: 'd93e31cf-2858-434b-b430-ef88ec772d2d:fx',
+          DEEPL_API_KEY, // Usamos la clave de API desde el archivo .env
           text: text,
           target_lang: 'ES', // Traducción al español
         },
